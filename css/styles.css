@@ -5,8 +5,13 @@ Color scheme is a bit shit.
 Finish search functionality
 See if we can format the text of data-captions.*/
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: whitesmoke;
+    padding: 15px;
 }
 
 /*
@@ -27,7 +32,7 @@ input[type=text] {
     border-radius: 5px;
     border: 3px solid #9f9f7f;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-    width: 30%;  
+    width: 40%;  
     transition: width 0.3s ease-in-out; 
    } 
 
@@ -38,8 +43,8 @@ input[type=text]:focus {
 }
 
 .gallery {
-    width: 85%;
-    max-width: 900px;
+    max-width: 940px;
+    min-width: 230px;
     margin: 50px auto;
     padding: 20px 20px;
     display: grid;
