@@ -25,28 +25,35 @@ input[type=text] {
     margin-top: 25px;
     padding: 5px;  
     border-radius: 5px;
-    border: 3px solid #7e9a9a;
+    border: 3px solid #9f9f7f;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
     width: 30%;  
-    transition: width 0.15s ease-in-out; 
+    transition: width 0.3s ease-in-out; 
    } 
 
 input[type=text]:focus { 
-    width: 40%; 
+    width: 50%; 
     border-radius: 5px;
-    border: 5px dashed #7e9a9a;   
+    border: 5px dashed #9f9f7f;   
 }
 
 .gallery {
-    max-width: 840px;
+    width: 85%;
+    max-width: 900px;
     margin: 50px auto;
-    padding: 20px 10px;
+    padding: 20px 20px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    justify-items: center;
     grid-gap: 10px;
-     grid: auto-flow / repeat(4, 200px);
-    background-color: #7e9a9a;
+    
+    background-color: #9f9f7f;
     border-radius: 15px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
 }
 
-data-captions {
-    font-size: 30px;
+.gallery img {
+    padding: 3px;
+    border: 5px dashed rgba(255,255,255,0.3);
+    border-radius: 5px;
 }
