@@ -1,7 +1,5 @@
 
 /*
-Need to center the gallery items within the div element, they are slightly off center.
-Color scheme is a bit shit.
 Finish search functionality
 See if we can format the text of data-captions.*/
 
@@ -14,17 +12,12 @@ body {
     padding: 15px;
 }
 
-/*
-Header is currently using flex box to center the search bar.
-Might be easier to use Grid only as I can't use media queries anyway
-*/
-
 header {
     display: flex;
     justify-content: center;
 }
 
-input[type=text] {
+input[type=search] {
     line-height: 30px;
     font-size: 20px;
     margin-top: 25px;
@@ -36,7 +29,7 @@ input[type=text] {
     transition: width 0.3s ease-in-out; 
    } 
 
-input[type=text]:focus { 
+input[type=search]:focus { 
     width: 50%; 
     border-radius: 5px;
     border: 5px dashed #9f9f7f;   
@@ -49,7 +42,7 @@ input[type=text]:focus {
     padding: 20px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    justify-items: center;
+    justify-items: space-around;
     grid-gap: 10px;
     
     background-color: #9f9f7f;
