@@ -85,3 +85,27 @@
 //           } 
 //    } 
 // } 
+
+
+
+// From Slack conversation:
+
+// Start with this very slight modification to your :javascript: 
+// making input a global variable and the .value removed from it, 
+// so the keyup event listener can be attached to it, like in Amber's Office Hours.
+// With this code you can open console and see the letters being typed in. 
+// There are a few more things you will need to tweak, but this will get you started out:
+
+let input = document.getElementById('searchbar');
+function Search() {
+  console.log(input.value);
+  let a = document.getElementsByTagName('a');
+  for (i = 0; i < a.length; i++) {
+    if (!a[i].getAttribute('data-caption').toLowerCase().includes(input)) {
+      a[i].style.display = "none";
+    } else {
+      a[i].style.display = "";
+    }
+  }
+}
+input.addEventListener('keyup', Search);
