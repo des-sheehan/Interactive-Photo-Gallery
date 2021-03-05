@@ -1,8 +1,8 @@
 
  //runs lightbox  
-  baguetteBox.run('.gallery', 
-  'captions'
-);
+ window.addEventListener('load', () => {
+	baguetteBox.run('.gallery');
+});
 
 // Seach Bar Element
 
@@ -18,7 +18,7 @@ const searchTextLive = (searchInput) => {
     //define the caption text for each, set to lowercase.
     const captionText = aTag.getAttribute('data-caption').toLowerCase();
     //define the image element for each
-    const ImageDisplay = aTag.firstElementChild;
+    const imageDisplay = aTag.firstElementChild;
 
 
     //if the caption text is is included in the Search input

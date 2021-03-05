@@ -7,6 +7,8 @@
 // const Captiontexts = document.querySelectorAll('a')[i].getAttribute('data-content');
 
 //V1--------------------------------
+//=============================
+//-----------------------------
 
 // function Search() { 
 //     //This is what is typed in Search bar
@@ -24,6 +26,8 @@
 // } 
 
 //V2-------------------------------- https://www.w3schools.com/howto/howto_js_filter_lists.asp
+//=============================
+//-----------------------------
 
 // function Search() { 
 //     //This is what is typed in Search bar
@@ -43,7 +47,8 @@
 
 
 //V3-------------------------------- Office Hours layout
-
+//=============================
+//-----------------------------
 
 // const searchbar = document.querySelector('#searchbar');
 // const captionTexts = document.getElementsByTagName('a')[i].getAttribute('data-caption');
@@ -69,7 +74,8 @@
 
 
 // V4-------------------------------- https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/
-
+//=============================
+//-----------------------------
 
 // function photoSearch() { 
 //   let input = document.getElementById('searchbar').value;
@@ -87,7 +93,8 @@
 // } 
 
 
-
+//=============================
+//-----------------------------
 // From Slack conversation:
 
 // Start with this very slight modification to your :javascript: 
@@ -96,16 +103,58 @@
 // With this code you can open console and see the letters being typed in. 
 // There are a few more things you will need to tweak, but this will get you started out:
 
-let input = document.getElementById('searchbar');
-function Search() {
-  console.log(input.value);
-  let a = document.getElementsByTagName('a');
-  for (i = 0; i < a.length; i++) {
-    if (!a[i].getAttribute('data-caption').toLowerCase().includes(input)) {
-      a[i].style.display = "none";
-    } else {
-      a[i].style.display = "";
+// let input = document.getElementById('searchbar');
+// function Search() {
+//   console.log(input.value);
+//   let a = document.getElementsByTagName('a');
+//   for (i = 0; i < a.length; i++) {
+//     if (!a[i].getAttribute('data-caption').toLowerCase().includes(input)) {
+//       a[i].style.display = "none";
+//     } else {
+//       a[i].style.display = "";
+//     }
+//   }
+// }
+// input.addEventListener('keyup', Search);
+
+
+
+//V5 --------------------------
+//=============================
+//-----------------------------
+
+// Seach Bar Element
+
+// define a variable for the Search bar element
+let searchInput = document.getElementById('searchbar');
+
+//create variable for the text that's been input live in the search bar.
+const searchTextLive = (searchInput) => {
+  //target all anchor tags
+  const aTags = document.querySelectorAll('a');
+  //array of each anchor element
+  aTags.forEach(aTag => {
+    //define the caption text for each, set to lowercase.
+    const captionText = aTag.getAttribute('data-caption').toLowerCase();
+    //define the image element for each
+    const ImageDisplay = aTag.firstElementChild;
+
+
+    //if the caption text is is included in the Search input
+      if (captionText.includes(searchInput)){
+        //display the image
+      imageDisplay.style.display = 'block';
+    } else { 
+      //hide the image
+      imageDisplay.style.display = 'none';
     }
-  }
-}
-input.addEventListener('keyup', Search);
+  });
+};
+
+//Event Listener to check the function on each keyup
+// x is a unnamed variable
+
+searchInput.addEventListener('keyup', (x) => {
+	let searchInput = x.target.value.toLowerCase();
+	searchTextLive(searchInput);
+})
